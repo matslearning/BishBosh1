@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+  </head>
+  <body>
+    <h3>
+      BishBoch version 1.0<br /><br />
+      Vänligen öppna konsolen (via F12) för att<br />
+      studera resultatet av Javasciptkörningen!<br />
+    </h3>
+    <script>
+      /* Funktion som tar emot ett tal och 
+         returnerar antingen talet, "Bish", "Bosh" eller "Bish-Bosh" */
+      function bishBosh(tal) {
+
+        let bish = (tal % 3) === 0;
+        let bosh = (tal % 4) === 0;
+        let output = bish ? 'Bish' : '';
+        if(bosh) {
+          output += (bish ? '-' : '') + "Bosh";
+        }
+        return (bish || bosh) ? output : tal;
+
+      }
+
+      /* Anropa bishBosh med parametervärden från 1 till 100
+         samt skriv ut resultatet för varjeanrop i konsolen */
+      for(let i=1; i<=100; i++) {
+        console.log(i + ': ' + bishBosh(i));
+      }
+
+    </script>
+  </body>
+</html>
